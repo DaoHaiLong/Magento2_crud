@@ -1,0 +1,18 @@
+<?php
+/** @var \AHT\AHTtest\Block\Template $block */
+$datatable=$block->getTable();
+
+?>
+
+<div class="template">
+    <h1 style="text-align: center;">Edit</h1>
+    <form action="<?=$block->getBaseUrl()?>haha/index/save" method="post">
+        <input type="text" name="name" placeholder="Enter name ...." style="width:500px ; margin-bottom:30px;"value="<?=$datatable->getName()?>">
+        <input type="text" name="age" placeholder=" Enter age ...."style="width:500px ; margin-bottom:30px;"value="<?=$datatable->getAge()?>">
+       <?php if($datatable !=null):?> 
+        <input type="hidden" value="<?=$datatable->getTableId()?> "name="table_id" >
+       <?php endif?>
+       
+        <button type="submit">Submit</button>
+   </form>
+</div>

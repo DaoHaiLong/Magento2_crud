@@ -1,0 +1,12 @@
+{
+    "aht_ahttest_table": {
+        "column": {
+            "table_id": true,
+            "name": true,
+            "age": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

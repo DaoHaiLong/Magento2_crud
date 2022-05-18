@@ -1,0 +1,34 @@
+<?php
+/** @var \AHT\AHTtest\Block\Template $block */
+$data = $block->test();
+?>
+<a href="<?=$block->getBaseUrl()?>haha/index/create">Add</a>
+
+<table style="border: 1px solid green;">
+    <thead style="border: 1px solid green;"> 
+    <tr >
+        <th style="border: 1px solid green;">ID</th>
+        <th style="border: 1px solid green;">Name</th>
+        <th style="border: 1px solid green;">Age</th>
+        <th style="border: 1px solid green;">Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <?php foreach($data as $value):?>
+            <tr>
+                <td style="border: 1px solid green;"><?=$value->getTableId()?></td>
+                <td style="border: 1px solid green;"><?=$value->getName()?></td>
+                <td style="border: 1px solid green;"><?=$value->getAge()?></td>
+                <td style="border: 1px solid green;"> 
+                    <a href="<?=$block->getBaseUrl()?>haha/index/delete/id/<?=$value->getTableId()?>">Delete</a>
+                    <a href="<?=$block->getBaseUrl()?>haha/index/edit/id/<?=$value->getTableId()?>">Edit</a>
+                </td>
+                
+            </tr>
+        <?php endforeach?>
+    </tbody>
+   
+    
+    
+</table>
